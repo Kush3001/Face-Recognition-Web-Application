@@ -8,14 +8,14 @@ import matplotlib.pyplot as plt
 # Initializing the Image Size:
 IMAGE_SIZE = [224, 224]
 # Initializing the training and test path:
-train_path = 'Face Recognition using Keras\DataSets\Train'
-test_path = 'Face Recognition using Keras\DataSets\Test'
+train_path = 'Face-Recognition-Web-Application\DataSets\Train'
+test_path = 'Face-Recognition-Web-Application\DataSets\Test'
 
 vgg = VGG16(input_shape=IMAGE_SIZE+[3], weights='imagenet', include_top=False)
 for layer in vgg.layers:
     layer.trainable = False
 
-folders = glob('Face Recognition using Keras/DataSets/*')
+folders = glob('Face-Recognition-Web-Application/DataSets/*')
 
 x = Flatten()(vgg.output)
 prediction = Dense(len(folders), activation='softmax')(x)
@@ -32,12 +32,12 @@ train_datagen = ImageDataGenerator(rescale=1./255,
 
 test_datagen = ImageDataGenerator(rescale=1./255)
 
-training_set = train_datagen.flow_from_directory('Face Recognition using Keras\DataSets\Train',
+training_set = train_datagen.flow_from_directory('Face-Recognition-Web-Application\DataSets\Train',
                                                  target_size=(224, 224),
                                                  batch_size=32,
                                                  class_mode='categorical')
 
-test_set = test_datagen.flow_from_directory('Face Recognition using Keras\DataSets\Test',
+test_set = test_datagen.flow_from_directory('Face-Recognition-Web-Application\DataSets\Test',
                                             target_size=(224, 224),
                                             batch_size=32,
                                             class_mode='categorical')
