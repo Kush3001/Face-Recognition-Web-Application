@@ -2,7 +2,7 @@ from itertools import count
 import cv2 as cv
 
 face_classifier = cv.CascadeClassifier(
-    'Face Recognition using Keras\haarcascade_frontalface_default.xml')
+    'Face-Recognition-Web-Application\haarcascade_frontalface_default.xml')
 
 
 def face_extractor(img):
@@ -24,7 +24,7 @@ while True:
     if face_extractor(frame) is not None:
         count += 1
         face = cv.resize(face_extractor(frame), (400, 400))
-        file_path = './Face Recognition using Keras\DataSets\Train\Kushagra' + str(count) + '.jpg'
+        file_path = './Face-Recognition-Web-Application\DataSets\Train\Kushagra' + str(count) + '.jpg'
         cv.imwrite(file_path, face)
         cv.putText(face, str(count), (50, 50),
                    cv.FONT_HERSHEY_COMPLEX, 1, (0, 255, 0), 2)
