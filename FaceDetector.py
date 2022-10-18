@@ -23,9 +23,9 @@ with col3:
 
 frame_window = st.image([], channels="BGR")
 
-model = load_model('Face Recognition using Keras\FaceModel1.h5')
+model = load_model('Face-Recognition-Web-Application\FaceModel1.h5')
 face_cascade = cv.CascadeClassifier(
-    'Face Recognition using Keras\haarcascade_frontalface_default.xml')
+    'Face-Recognition-Web-Application\haarcascade_frontalface_default.xml')
 
 
 def face_extractor(img):
