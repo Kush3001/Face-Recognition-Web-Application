@@ -1,13 +1,7 @@
 from PIL import Image
 import numpy as np
-import base64
-from io import BytesIO
-import json
-import random
 import cv2 as cv
-from keras.applications.vgg16 import preprocess_input
 from keras.models import load_model
-from keras.preprocessing import image
 import streamlit as st
 
 # st.title('Face Recognition System')
