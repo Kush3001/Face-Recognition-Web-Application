@@ -22,11 +22,15 @@ with col3:
 
 FRAME_WINDOW = st.image([],channels='BGR')
 
-model = load_model(r'Face-Recognition-Web-Application\FaceModel1.h5')
+# model = load_model(r'Face-Recognition-Web-Application\FaceModel1.h5')
+model = load_model(r'FaceModel1.h5')
+
 
 # Loading the cascades
 
-face_cascade = cv.CascadeClassifier('Face-Recognition-Web-Application\haarcascade_frontalface_default.xml')
+# face_cascade = cv.CascadeClassifier('Face-Recognition-Web-Application\haarcascade_frontalface_default.xml')
+face_cascade = cv.CascadeClassifier('haarcascade_frontalface_default.xml')
+
 
 def face_extractor(img):
     # Function detects faces and returns the cropped face
@@ -67,9 +71,9 @@ while run:
         if(pred[0][0]>0.8):
             name='Aniket'
         if(pred[0][1]>0.8):
-            name='Kushagra'
-        if(pred[0][2]>0.8 ):
             name='Sushovan'
+        if(pred[0][2]>0.8 ):
+            name='Kushagra'
         
         cv.putText(frame,name, (50, 50), cv.FONT_HERSHEY_COMPLEX, 1, (0,255,0), 2)
     else:
